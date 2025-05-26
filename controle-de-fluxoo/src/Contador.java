@@ -10,20 +10,20 @@ public class Contador {
 
         try {
             contar(primeiroNum, segundoNum);
-        } catch (Exception e) {
+        } catch (ParametrosInvalidosException e) {
             System.out.println("O segundo número precisa ser maior que o primeiro");
         }
         scanner.close();
     }
 
     static void contar(int primeiroNum, int segundoNum) throws ParametrosInvalidosException{
+        int contagem = segundoNum - primeiroNum;
+        for(int x = 1;x <= contagem; x++){
+            System.out.println("Printando o número: "+ x);
+        }
         if(primeiroNum > segundoNum){
             throw new ParametrosInvalidosException();
         }
-    int contagem = segundoNum - primeiroNum;
-    for(int x = 1;x <= contagem; x++){
-        System.out.println("Printando o número: "+ x);
-    }
 
     }
 }
